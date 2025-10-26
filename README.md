@@ -98,5 +98,3 @@ Cormen, Leiserson, Rivest, Stein — Introduction to Algorithms
 Sedgewick, Wayne — Algorithms, 4th Edition
 
 GeeksforGeeks – Prim’s vs Kruskal’s Algorithm Comparison
-
-## Developed by Dana for Assignment 3 (DAA)
