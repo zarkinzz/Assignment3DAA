@@ -6,7 +6,7 @@ This report presents the results of applying **Prim’s** and **Kruskal’s** al
 The goal of this work is to connect all city districts with the lowest total road construction cost and compare the performance of both algorithms on three different datasets.
 
 ---
-▶️ Run (predefined datasets)
+# ▶️ Run (predefined datasets)
 # Small dataset
 java -jar target/mst-app.jar small
 
@@ -16,9 +16,10 @@ java -jar target/mst-app.jar medium
 # Large dataset
 java -jar target/mst-app.jar large
 
-📝 Run (manual input/output)
+# 📝 Run (manual input/output)
 
 java -jar target/mst-app.jar src/main/resources/input/ass_3_input_small.json src/main/resources/output/ass_3_ou
+
 ---
 
 ## 2. Input Data Summary
