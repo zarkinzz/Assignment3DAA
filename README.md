@@ -17,6 +17,7 @@ java -jar target/mst-app.jar medium
 java -jar target/mst-app.jar large
 
 📝 Run (manual input/output)
+
 java -jar target/mst-app.jar src/main/resources/input/ass_3_input_small.json src/main/resources/output/ass_3_ou
 ---
 
