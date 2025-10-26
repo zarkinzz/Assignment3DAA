@@ -99,4 +99,4 @@ Sedgewick, Wayne — Algorithms, 4th Edition
 
 GeeksforGeeks – Prim’s vs Kruskal’s Algorithm Comparison
 
-<p align="center"> <i>Developed by Dana for Assignment 3 (DAA) · Astana IT University</i> </p> ```
+<p align="center"> <i>Developed by Dana for Assignment 3 (DAA) · Astana IT University</i> </p>
