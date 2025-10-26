@@ -1,100 +1,65 @@
-<h1 align="center">🌐 Minimum Spanning Tree – Analytical Report</h1>
+# Analytical Report
+**Assignment 3 – Optimization of a City Transportation Network (MST)**
 
-<p align="center">
-  <b>Assignment 3 · Design and Analysis of Algorithms</b><br>
-  <i>Comparison of Prim’s and Kruskal’s algorithms for building a Minimum Spanning Tree (MST)</i>
-</p>
-
----
-
-## 📘 Introduction
-
-This project analyzes two popular algorithms used to find the **Minimum Spanning Tree (MST)**:
-- **Prim’s Algorithm**
-- **Kruskal’s Algorithm**
-
-The goal is to connect all vertices with the **lowest total edge cost** while comparing **efficiency, correctness, and scalability**.
+## 1. Introduction
+This report presents the results of applying **Prim’s** and **Kruskal’s** algorithms to find the **Minimum Spanning Tree (MST)** in a city transportation network.  
+The goal of this work is to connect all city districts with the lowest total road construction cost and compare the performance of both algorithms on three different datasets.
 
 ---
 
-## ⚙️ How to Run
+## 2. Input Data Summary
+Three datasets were used to test the program:
 
-### 🧩 Build (with Maven)
-```bash
-mvn -DskipTests package
-# Small dataset
-java -jar target/mst-app.jar small
+| Dataset | File Name | Vertices | Edges | Description |
+|----------|------------|----------|-------|--------------|
+| Small | `ass_3_input_small.json` | ~10 | ~20 | Small test graph |
+| Medium | `ass_3_input_medium.json` | ~100 | ~500 | Medium graph |
+| Large | `ass_3_input_large.json` | ~500 | ~2000 | Large graph for performance analysis |
 
-# Medium dataset
-java -jar target/mst-app.jar medium
+---
 
-# Large dataset
-java -jar target/mst-app.jar large
-java -jar target/mst-app.jar src/main/resources/input/ass_3_input_small.json src/main/resources/output/ass_3_output_small.json
-Input files: src/main/resources/input/
-Output files: src/main/resources/output/
+## 3. Algorithm Results
 
-Each output JSON file contains:
+| Dataset | MST Total Cost | Prim Time (ms) | Kruskal Time (ms) | Prim Operations | Kruskal Operations |
+|----------|----------------|----------------|-------------------|------------------|--------------------|
+| Small | same | very fast | very fast | low | low |
+| Medium | same | faster | slower | medium | high |
+| Large | same | faster | slower | higher | highest |
 
-MST total cost
+---
 
-Execution time (ms)
+## 4. Interpretation of Results
+- Both **Prim’s** and **Kruskal’s** algorithms always produce the same MST total cost.  
+  This means both algorithms are **correct**.
+- **Prim’s algorithm** was faster on the **medium** and **large** datasets because it uses a **priority queue**, which efficiently finds the next smallest edge.
+- **Kruskal’s algorithm** performed slightly slower for dense graphs since it needs to **sort all edges first** and then use **Union-Find** operations.
 
-Number of operations
+---
 
-Number of vertices and edges
+## 5. Comparison
+| Criterion | Prim’s Algorithm | Kruskal’s Algorithm |
+|------------|------------------|---------------------|
+| Best for | Dense graphs | Sparse graphs |
+| Complexity | O(E log V) | O(E log E) |
+| Implementation | Uses priority queue | Uses sorting and union-find |
+| Speed on large graphs | Faster | Slower |
+| MST cost | Same | Same |
 
-Separate results for Prim and Kruskal
+---
 
-📂 Datasets
+## 6. Conclusions
+- Both algorithms are **accurate and efficient** for finding MSTs.
+- For **dense graphs** (many connections), **Prim’s algorithm** performs better and runs faster.
+- For **sparse graphs** (few edges), **Kruskal’s algorithm** is easier to implement and still efficient.
+- The total MST cost is identical in both methods, which confirms their correctness.
 
-| Dataset | File Name | ~Vertices (|V|) | ~Edges (|E|) | Description |
-|:--------:|:-----------|:------------:|:-----------:|:-------------|
-| 🟢 Small | ass_3_input_small.json | ~10 | ~20 | Used for basic correctness |
-| 🟡 Medium | ass_3_input_medium.json | ~300 | ~2,000–3,000 | Used for performance testing |
-| 🔴 Large | ass_3_input_large.json | ~2000 | ~10,000 | Used for stress testing |
+**Final conclusion:**  
+For real-world networks with many connections (like city roads), **Prim’s algorithm** is more suitable due to better performance.  
+For smaller or sparse networks, **Kruskal’s algorithm** remains a simple and reliable choice.
 
-All graphs are connected and undirected, with positive edge weights.
+---
 
-📊 Results (Example Template)
-Dataset	MST Cost	Prim Time (ms)	Kruskal Time (ms)	Same Cost?
-Small	120	2	3	✅
-Medium	780	15	22	✅
-Large	2400	100	138	✅
-
-(Replace with your real data from JSON outputs.)
-
-🔍 Analysis and Interpretation
-
-Both algorithms found the same MST cost → correctness confirmed.
-
-Prim’s Algorithm: works faster on dense graphs, as it uses a priority queue (min-heap).
-
-Kruskal’s Algorithm: performs well on sparse graphs, using Union-Find (Disjoint Set) to detect cycles.
-
-For larger datasets, Prim is generally faster, while Kruskal is simpler to implement.
-
-⚖️ Comparison
-Feature	Prim’s Algorithm	Kruskal’s Algorithm
-Input type	Adjacency list	Edge list
-Complexity	O(E log V)	O(E log E) ≈ O(E log V)
-Best for	Dense graphs	Sparse graphs
-Data structure	Priority Queue	Union-Find
-Implementation	Slightly complex	Easier to code
-🧠 Conclusions
-
-Both algorithms produce the same minimum total cost, proving correctness.
-
-Prim’s performs better for large and dense graphs.
-
-Kruskal’s is efficient for smaller or sparse networks.
-
-Both are reliable and important for graph optimization and network design tasks.
-
-📚 References
-
-Cormen, Leiserson, Rivest, Stein — Introduction to Algorithms
-
-Sedgewick, Wayne — Algorithms, 4th Edition
-
-GeeksforGeeks – Prim’s vs Kruskal’s Algorithm Comparison
+**Prepared by:** Dana  
+**Course:** Design and Analysis of Algorithms  
+**Instructor:** Khaimuldin Nursultan  
+**Date:** 26.10.25
