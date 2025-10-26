@@ -59,7 +59,8 @@ For smaller or sparse networks, **Kruskal’s algorithm** remains a simple and r
 
 ---
 
-**Prepared by:** Dana  
-**Course:** Design and Analysis of Algorithms  
+**Prepared by:** Dana Shokobalinova
+**Course:** Design and Analysis of Algorithms 
+**Group:** SE-2402
 **Instructor:** Khaimuldin Nursultan  
 **Date:** 26.10.25
